@@ -1,0 +1,56 @@
+Create an account on lite.nitrous.io
+  * choose python
+
+In your nitrous box
+  * choose terminal or console
+  NITROUS COMMANDS
+  * parts install postgresql
+    -- not a standard sql command! this is special in nitrous to install postgresql in nitrous
+    -- for more info, http://www.help.nitrious.io.postgresql
+  * parts start postgresql
+  * exit - exits out of 
+  COMMAND LINE COMMAND
+  * psql - takes you to the postgres command line
+    -- should see action=# on its own line
+  PSQL COMMANDS
+  * \q - quits out of the sql command line
+  * CREATE DATABASE wwc;
+  * \l - lists databases (some are already there, but you should see the new wwc database you created)
+  * \c wwc - connects database
+    -- should see wwc=# on its own line
+  * <control> + c - backs you out
+  SQL COMMANDS
+  * CREATE TABLE
+    example: 
+      CREATE TABLE members 
+      (
+      name VARCHAR(60), 
+      phone VARCHAR(20), 
+      email VARCHAR(60)
+      );
+      -- should see CREATE TABLE
+  * VARCHAR() - can specify max number of digits
+  * CHAR() - true/false
+  * \dt - displays table
+  * \d members - displays fields in table members
+  * INSERT INTO
+    example: 
+      INSERT INTO members (name, phone, email)
+        VALUES ('Sue-Ting Chene', '408-605-8267', 'sueting@gmail.com')
+      ;
+    -- should see INSERT 0 1
+  * SELECT
+    example:
+      SELECT * FROM members;
+    -- displays all fields from all records
+    examples: 
+      • SELECT name FROM members;
+      • SELECT * FROM members
+          WHERE name LIKE '%an%'; 
+      • SELECT * FROM members
+          ORDER BY email;
+  * UPDATE
+    example:
+      UPDATE members 
+        SET name = 'new name' where email = 'same email'
+      ;
